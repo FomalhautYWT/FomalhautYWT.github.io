@@ -74,7 +74,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -221,7 +221,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="在此处输入标题"><a href="#在此处输入标题" class="headerlink" title="在此处输入标题"></a>在此处输入标题</h1><p>标签（空格分隔）： hexo</p>
+<hr>
+<p>这里是第一篇blog，主要功能是测试。内容的话就稍微说一下这个blog搭建的过程吧</p>
+<p>先介绍一下这个看起来还不错的blog，来自一个叫做Hexo的框架。下面手把手级别教学一下如何从零搭建hexo。</p>
+<p>首首首首首先，大概需要了解一下git？<br>嗯，如果是win下的话我建议下载一个<a href="https://git-for-windows.github.io/" target="_blank" rel="external">git for windows</a></p>
+<p>之后，跑到<a href="https://github.com" target="_blank" rel="external">github</a>去注册一个账号。</p>
+<p>在本地链接一下你的ssh keys。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
+<p>如果没有的话就<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure></p>
+<p>一路回车</p>
+<p>打开你的 ~/.ssh/id_rsa.pub将里面内容复制到github里你头像seetings左边ssh keys。</p>
+<p>然后，在你喜欢的地方建立一个文件夹。</p>
+<p>喔，在这之前你还需要安装一个<a href="http://nodejs.org" target="_blank" rel="external">node.js</a></p>
+<p>之后开始搭建blog吧</p>
+<p>首先<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>之后在你刚刚那个文件夹里<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>等停下来我们可以先执行这样一组命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+<p>打开本地的localhost:4000看一下样子。</p>
+<p>如何将这个同步到github让别人也看到呢<br>在你的github上建立一个repo<br>名字要叫<br>username.github.io<br>username就是你的github的名字<br>修改_config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">type:</div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: http://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: 对应的ssh地址</div><div class="line">branch: master</div></pre></td></tr></table></figure></p>
+<p>装个插件用来上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>之后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>如果没问题的话就可以看到你的blog了<br>（在浏览器键入username.github.io)</p>
+<p>说一下，大概大部分界面的配置就是在_config.yml里面改，比如主题，网站名等。如果你觉得默认主题不好看可以去搜各种不同的theme然后加到theme里在_config.yml里对应更改就好</p>
+<p>建议，因为本地代码不会在github上备份，所以可以在usesrname.github.io那个repo下再开一个分支用来记录源代码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">$ git remote add origin git@github.com:username/username.github.io.git</div><div class="line">$ git pull</div><div class="line">$ git checkout -b hexo</div><div class="line">$ rm 不是<span class="built_in">source</span> code的东西</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">"balabala"</span></div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
+<p>这样就可以把你的源代码也提交上去了。以后每次维护更新的时候可以这样<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo d</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">"balabala"</span></div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
+<p>如果你愿意也可以写个脚本存起来</p>
+<p>大概到这里就完成了建站，开始写blog把</p>
+
       
     </div>
     
