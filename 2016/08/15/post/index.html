@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>准备开始写博客啦 | Durandal</title>
+  <title>关于yilia代码高亮中出现滚动条的问题 | Durandal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这里是第一篇blog，主要功能是测试。内容的话就稍微说一下这个blog搭建的过程吧">
+  <meta name="description" content="配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服所以查了一下发现了解决方案在hexo/themes/yilia/source/css/_partial/highlight.styl文件中将123.linefont-size: 15pxheight: 15px
+删掉height选项之后就可以了。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="准备开始写博客啦">
-<meta property="og:url" content="http://yoursite.com/2016/08/14/准备开始写博客啦/index.html">
+<meta property="og:title" content="关于yilia代码高亮中出现滚动条的问题">
+<meta property="og:url" content="http://yoursite.com/2016/08/15/post/index.html">
 <meta property="og:site_name" content="Durandal">
-<meta property="og:description" content="这里是第一篇blog，主要功能是测试。内容的话就稍微说一下这个blog搭建的过程吧">
-<meta property="og:updated_time" content="2016-08-15T04:40:04.000Z">
+<meta property="og:description" content="配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服所以查了一下发现了解决方案在hexo/themes/yilia/source/css/_partial/highlight.styl文件中将123.linefont-size: 15pxheight: 15px
+删掉height选项之后就可以了。。。">
+<meta property="og:updated_time" content="2016-08-15T09:40:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="准备开始写博客啦">
-<meta name="twitter:description" content="这里是第一篇blog，主要功能是测试。内容的话就稍微说一下这个blog搭建的过程吧">
+<meta name="twitter:title" content="关于yilia代码高亮中出现滚动条的问题">
+<meta name="twitter:description" content="配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服所以查了一下发现了解决方案在hexo/themes/yilia/source/css/_partial/highlight.styl文件中将123.linefont-size: 15pxheight: 15px
+删掉height选项之后就可以了。。。">
   
     <link rel="alternative" href="/atom.xml" title="Durandal" type="application/atom+xml">
   
@@ -197,11 +200,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-准备开始写博客啦" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-post" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/14/准备开始写博客啦/" class="article-date">
-  	<time datetime="2016-08-14T04:59:50.000Z" itemprop="datePublished">2016-08-14</time>
+      <a href="/2016/08/15/post/" class="article-date">
+  	<time datetime="2016-08-15T09:30:30.000Z" itemprop="datePublished">2016-08-15</time>
 </a>
     </div>
   
@@ -214,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      准备开始写博客啦
+      关于yilia代码高亮中出现滚动条的问题
     </h1>
   
 
@@ -230,31 +233,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这里是第一篇blog，主要功能是测试。内容的话就稍微说一下这个blog搭建的过程吧<br><a id="more"></a><br>先介绍一下这个看起来还不错的blog，来自一个叫做Hexo的框架。下面手把手级别教学一下如何从零搭建hexo。</p>
-<p>首首首首首先，大概需要了解一下git？<br>嗯，如果是win下的话我建议下载一个<a href="https://git-for-windows.github.io/" target="_blank" rel="external">git for windows</a></p>
-<p>之后，跑到<a href="https://github.com" target="_blank" rel="external">github</a>去注册一个账号。</p>
-<p>在本地链接一下你的ssh keys。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
-<p>如果没有的话就<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure></p>
-<p>一路回车</p>
-<p>打开你的 ~/.ssh/id_rsa.pub将里面内容复制到github里你头像seetings左边ssh keys。</p>
-<p>然后，在你喜欢的地方建立一个文件夹。</p>
-<p>喔，在这之前你还需要安装一个<a href="http://nodejs.org" target="_blank" rel="external">node.js</a></p>
-<p>之后开始搭建blog吧</p>
-<p>首先<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p>之后在你刚刚那个文件夹里<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
-<p>等停下来我们可以先执行这样一组命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo s</div></pre></td></tr></table></figure>
-<p>打开本地的localhost:4000看一下样子。</p>
-<p>如何将这个同步到github让别人也看到呢<br>在你的github上建立一个repo<br>名字要叫<br>username.github.io<br>username就是你的github的名字<br>修改_config.yml<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># Deployment</span></div><div class="line"><span class="meta">## Docs: http:<span class="comment">//hexo.io/docs/deployment.html</span></span></div><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">type:</span></div></pre></td></tr></table></figure></p>
-<p>改为<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># Deployment</span></div><div class="line"><span class="meta">## Docs: http:<span class="comment">//hexo.io/docs/deployment.html</span></span></div><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">type:</span> git</div><div class="line"><span class="symbol">repo:</span> 对应的ssh地址</div><div class="line"><span class="symbol">branch:</span> master</div></pre></td></tr></table></figure></p>
-<p>装个插件用来上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>之后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
-<p>如果没问题的话就可以看到你的blog了<br>（在浏览器键入username.github.io)</p>
-<p>说一下，大概大部分界面的配置就是在_config.yml里面改，比如主题，网站名等。如果你觉得默认主题不好看可以去搜各种不同的theme然后加到theme里在_config.yml里对应更改就好</p>
-<p>建议，因为本地代码不会在github上备份，所以可以在usesrname.github.io那个repo下再开一个分支用来记录源代码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ git init</div><div class="line">$ git remote add origin git@github.com:username/username.github.io.git</div><div class="line">$ git pull</div><div class="line">$ git checkout -b hexo</div><div class="line">$ rm 不是<span class="built_in">source</span> code的东西</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">"balabala"</span></div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
-<p>这样就可以把你的源代码也提交上去了。以后每次维护更新的时候可以这样<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo d</div><div class="line">$ git add .</div><div class="line">$ git commit -m <span class="string">"balabala"</span></div><div class="line">$ git push</div></pre></td></tr></table></figure></p>
-<p>如果你愿意也可以写个脚本存起来</p>
-<p>大概到这里就完成了建站，开始写blog把</p>
+        <a id="more"></a>
+<p>配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服<br>所以查了一下发现了解决方案<br>在hexo/themes/yilia/source/css/_partial/highlight.styl文件中将<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.line</span></div><div class="line"><span class="attribute">font-size</span>: <span class="number">15px</span></div><div class="line"><span class="attribute">height</span>: <span class="number">15px</span></div></pre></td></tr></table></figure></p>
+<p>删掉height选项<br>之后就可以了。。。</p>
 
       
     </div>
@@ -264,18 +245,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/08/15/post/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          关于yilia代码高亮中出现滚动条的问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/08/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/08/14/准备开始写博客啦/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">准备开始写博客啦</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -310,7 +282,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="准备开始写博客啦" data-title="准备开始写博客啦" data-url="http://yoursite.com/2016/08/14/准备开始写博客啦/"></div>
+	<div class="ds-thread" data-thread-key="post" data-title="关于yilia代码高亮中出现滚动条的问题" data-url="http://yoursite.com/2016/08/15/post/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
