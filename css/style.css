@@ -1477,7 +1477,6 @@ a {
 }
 .article-entry pre {
   color: #fff;
-  overflow: hidden;
 }
 .article-entry pre code {
   background: none;
