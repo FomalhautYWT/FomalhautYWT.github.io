@@ -23,7 +23,9 @@
     <link rel="alternative" href="/atom.xml" title="Durandal" type="application/atom+xml">
   
   
-    <link rel="icon" href="//favicon.png">
+    
+      <link rel="icon" href="/favicon.png">
+    
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -36,7 +38,10 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="0" class="js-avatar">
+				
+					<img lazy-src="null" class="js-avatar">
+				
+			
 			
 		</a>
 
@@ -321,10 +326,14 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
-		root: /
+		root: '/'
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+	(function(){
+		document.write('<scr'+'ipt type="text/javascript" src="'+document.location.protocol+'//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">'+'</sc'+'ript>');
+	})();
+</script>
 <script src="/js/main.js"></script>
 
 
@@ -349,7 +358,10 @@ MathJax.Hub.Queue(function() {
 });
 </script>
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script>
+	(function(){
+		document.write('<scr'+'ipt type="text/javascript" src="'+document.location.protocol+'//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">'+'</sc'+'ript>');
+	})();
 </script>
 
 
