@@ -1,7 +1,7 @@
 ---
 title: 关于yilia代码高亮中出现滚动条的问题
 date: 2016-08-15 17:30:30
-tags:
+tags: [hexo , yilia]
 ---
 <!-- more -->
 配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服
