@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Durandal">
 <meta property="og:description" content="配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服所以查了一下发现了解决方案在hexo/themes/yilia/source/css/_partial/highlight.styl文件中将123.linefont-size: 15pxheight: 15px
 删掉height选项之后就可以了。。。">
-<meta property="og:updated_time" content="2016-08-15T09:40:32.000Z">
+<meta property="og:updated_time" content="2016-08-17T02:14:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于yilia代码高亮中出现滚动条的问题">
 <meta name="twitter:description" content="配置hexo的yilia主题的时候发现了code-block的highlight会出现一个问题就是代码会被一个滚动条遮住，很难看很不舒服所以查了一下发现了解决方案在hexo/themes/yilia/source/css/_partial/highlight.styl文件中将123.linefont-size: 15pxheight: 15px
@@ -123,7 +123,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/gcc/" style="font-size: 10px;">gcc</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/yilia/" style="font-size: 10px;">yilia</a>
 					</div>
 				</section>
 				
@@ -220,6 +220,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yilia/">yilia</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -239,6 +243,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/08/17/CentOS6-x-手动升级gcc版本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          CentOS6.x 手动升级gcc版本
+        
+      </div>
+    </a>
   
   
     <a href="/2016/08/14/准备开始写博客啦/" id="article-nav-older" class="article-nav-link-wrap">

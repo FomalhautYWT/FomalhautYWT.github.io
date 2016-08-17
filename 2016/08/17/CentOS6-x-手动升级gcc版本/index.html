@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016 | Durandal</title>
+  <title>CentOS6.x 手动升级gcc版本 | Durandal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Durandal">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="关于CentOS 6.x gcc 默认版本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS6.x 手动升级gcc版本">
+<meta property="og:url" content="http://yoursite.com/2016/08/17/CentOS6-x-手动升级gcc版本/index.html">
 <meta property="og:site_name" content="Durandal">
+<meta property="og:description" content="关于CentOS 6.x gcc 默认版本">
+<meta property="og:updated_time" content="2016-08-17T02:14:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Durandal">
+<meta name="twitter:title" content="CentOS6.x 手动升级gcc版本">
+<meta name="twitter:description" content="关于CentOS 6.x gcc 默认版本">
   
     <link rel="alternative" href="/atom.xml" title="Durandal" type="application/atom+xml">
   
@@ -188,142 +192,127 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-CentOS6-x-手动升级gcc版本" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/17/CentOS6-x-手动升级gcc版本/" class="archive-article-date">
-  	<time datetime="2016-08-17T02:08:25.000Z" itemprop="datePublished">Aug 17</time>
+    <div class="article-meta">
+      <a href="/2016/08/17/CentOS6-x-手动升级gcc版本/" class="article-date">
+  	<time datetime="2016-08-17T02:08:25.000Z" itemprop="datePublished">2016-08-17</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/17/CentOS6-x-手动升级gcc版本/">CentOS6.x 手动升级gcc版本</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS6.x 手动升级gcc版本
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gcc/">gcc</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/15/post/" class="archive-article-date">
-  	<time datetime="2016-08-15T09:30:30.000Z" itemprop="datePublished">Aug 15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/15/post/">关于yilia代码高亮中出现滚动条的问题</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于CentOS 6.x gcc 默认版本<br><a id="more"></a><br>由于CentOS6.x的版本默认的gcc版本是4.4.7，不支持c++11的特性，所以我在拿到之后升级了一下gcc，但是当时在选择版本的时候看到了6.1.0想了一下最新版可能有坑就选择了5.4.0.。。事实证明，应该和系统选择一致的版本。。。于是在尝试编译出现了和4.8.x不太一样的东西的时候。。。无奈又要重新再安装一下4.8.4 所以准备记录一下过程</p>
+<p>首先是获取gcc的压缩包，你可以去<br><a href="http://ftp.gnu.org/gnu.gcc" target="_blank" rel="external">http://ftp.gnu.org/gnu.gcc</a>里面去挑选你想要的版本<br>我选择的是4.8.4<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.4/gcc-4.8.4.tar.bz2</div><div class="line">$ tar -jxvf gcc-4.8.4.tar.bz2</div></pre></td></tr></table></figure></p>
+<p>解压之后回省城一个目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> gcc-4.8.4</div><div class="line">$ ./contrib/download_prerequisites</div></pre></td></tr></table></figure></p>
+<p>这里gcc-4.8.4/contrib/download_prerequisites 这个脚本可以帮我们把依赖的环境都下载好安装好，无需再麻烦。。。非常方便<br>之后建议建立一个目录用来编译gcc，会产生很多编译出来的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ..</div><div class="line">$ mkdir gcc-build-4.8.4</div><div class="line">$ <span class="built_in">cd</span> gcc-build-4.8.4</div></pre></td></tr></table></figure></p>
+<p>生成makefile<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ../gcc-4.8.4/configure -enable-checking=release -enable-languages=c,c++ -disable-multilib</div></pre></td></tr></table></figure></p>
+<p>之后就编译吧<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make -j4</div></pre></td></tr></table></figure></p>
+<p>这里-j4是一个优化开关，如果不支持就直接make也可以，这一步会很长时间<br>结束之后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo make install</div><div class="line">$ gcc -v</div></pre></td></tr></table></figure></p>
+<p>安装一下，查看版本<br>另外提一句。gcc -v查看到可能会发现还是之前的版本，尝试重启或者断开ssh重连一下应该就好，如果还没好说明安装哪一步出了问题，正常情况下应该就可以用了。</p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yilia/">yilia</a></li></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/15/post/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于yilia代码高亮中出现滚动条的问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+
+
+<div class="share_addthis">
+  <div class="sharing addthis_toolbox share">
+    <a class="addthis_button_facebook_like"></a>
+    <a class="addthis_button_tweet"></a>
+    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    <a class="addthis_counter addthis_pill_style"></a>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/14/准备开始写博客啦/" class="archive-article-date">
-  	<time datetime="2016-08-14T04:59:50.000Z" itemprop="datePublished">Aug 14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/14/准备开始写博客啦/">准备开始写博客啦</a>
-    </h1>
-  
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-560c64c35486b3d4" async="async"></script>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/08/14/hello-world/" class="archive-article-date">
-  	<time datetime="2016-08-14T04:55:27.000Z" itemprop="datePublished">Aug 14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/08/14/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CentOS6-x-手动升级gcc版本" data-title="CentOS6.x 手动升级gcc版本" data-url="http://yoursite.com/2016/08/17/CentOS6-x-手动升级gcc版本/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fomalhautywt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
 
 </div>
       <footer id="footer">
@@ -349,8 +338,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
